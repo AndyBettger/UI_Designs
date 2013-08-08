@@ -3,6 +3,9 @@ package third.example.userinterfacedesigns;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends Activity {
 
@@ -19,4 +22,30 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	public boolean onOptionsItemSelected(MenuItem item) {
+		RelativeLayout bkgr = (RelativeLayout)findViewById(R.id.uilayout);
+		ImageView image = (ImageView)findViewById(R.id.imageView1);
+		
+		switch (item.getItemId()) {
+		
+		case R.id.buttonone:
+			image.setImageResource(R.drawable.image1);
+			return true;
+		case R.id.buttontwo:
+			image.setImageResource(R.drawable.image2);
+			return true;
+		case R.id.buttonthree:
+			bkgr.setBackgroundResource(R.color.background2);
+			return true;
+		case R.id.buttonfour:
+			bkgr.setBackgroundResource(R.color.background);
+			return true;
+		case R.id.buttonfive:
+			// The Alert Code For Next Section Goes Here!
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
 }
+
