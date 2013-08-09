@@ -9,7 +9,8 @@
     <string name="showwhite">USE WHITE</string>
     <string name="showblack">USE BLACK</string>
     <string name="showalert">SHOW ALERT</string>
-    <color name="background">#FFFFFF</color><color name="background2">#000000</color>
+    <color name="background">#FFFFFF</color>
+    <color name="background2">#000000</color>
     
 
 </resources>
