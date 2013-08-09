@@ -6,6 +6,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 
 public class MainActivity extends Activity {
 
@@ -24,8 +26,25 @@ public class MainActivity extends Activity {
 
 	public boolean onOptionsItemSelected(MenuItem item) {
 		RelativeLayout bkgr = (RelativeLayout)findViewById(R.id.uilayout);
-		ImageView image = (ImageView)findViewById(R.id.imageView1);
-		
+		final ImageView image = (ImageView)findViewById(R.id.imageView1);
+		AlertDialog.Builder builder = new AlertDialog.Builder(this);
+		builder.setTitle("Pick an Image!")
+			.setMessage("Please Select Image One or Image Two:")
+			.setCancelable(false)
+			.setPositiveButton("IMAGE 1", new DialogInterface.OnClickListener() {
+				
+				public void onClick(DialogInterface dialog, int id) {
+					image.setImageResource(R.drawable.image1);
+					
+				}
+			})
+			.setNegativeButton("IMAGE 2", new DialogInterface.OnClickListener() {
+				
+				public void onClick(DialogInterface dialog, int id) {
+					image.setImageResource(R.drawable.image2);
+					
+				}
+			});
 		switch (item.getItemId()) {
 		
 		case R.id.buttonone:
@@ -41,7 +60,7 @@ public class MainActivity extends Activity {
 			bkgr.setBackgroundResource(R.color.background2);
 			return true;
 		case R.id.buttonfive:
-			// The Alert Code For Next Section Goes Here!
+			builder.show();
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
