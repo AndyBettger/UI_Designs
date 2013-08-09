@@ -35,10 +35,10 @@ public class MainActivity extends Activity {
 			image.setImageResource(R.drawable.image2);
 			return true;
 		case R.id.buttonthree:
-			bkgr.setBackgroundResource(R.color.background2);
+			bkgr.setBackgroundResource(R.color.background);
 			return true;
 		case R.id.buttonfour:
-			bkgr.setBackgroundResource(R.color.background);
+			bkgr.setBackgroundResource(R.color.background2);
 			return true;
 		case R.id.buttonfive:
 			// The Alert Code For Next Section Goes Here!
